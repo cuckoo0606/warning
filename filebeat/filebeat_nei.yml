@@ -53,6 +53,13 @@ filebeat.prospectors:
 - input_type: log
 
   paths:
+    - /var/log/traffic/disk.log
+  document_type: zhonghui_disk
+
+
+- input_type: log
+
+  paths:
     - /var/log/traffic/mongo.log
   document_type: zhonghui_mongo
 
