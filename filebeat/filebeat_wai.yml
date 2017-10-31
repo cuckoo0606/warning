@@ -55,6 +55,27 @@ filebeat.prospectors:
   paths:
     - /var/log/traffic/disk.log
   document_type: zhonghuia_disk
+
+
+- input_type: log
+
+  paths:
+    - /var/log/traffic/weixin.log
+  document_type: zhonghuia_weixin
+
+
+- input_type: log
+
+  paths:
+    - /var/log/traffic/api.log
+  document_type: zhonghuia_api
+
+
+- input_type: log
+
+  paths:
+    - /var/log/traffic/hq.log
+  document_type: zhonghuia_hq
   #- input_type: log
   #
   #  paths:

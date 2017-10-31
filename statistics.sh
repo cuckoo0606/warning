@@ -93,6 +93,10 @@ if [[ "${TYPE[@]}" =~ 2 ]];then
     echo "$1 api=${API_COUNTS}" >> /var/log/traffic/info.log
     echo "$1 wx=${WX_COUNTS}" >> /var/log/traffic/info.log
     echo "$1 hq=${HQ_COUNTS}" >> /var/log/traffic/info.log
+    
+    echo "{\"weixin\": "${WX_COUNTS}"}" >> /var/log/traffic/weixin.log
+    echo "{\"api\": "${API_COUNTS}"}" >> /var/log/traffic/api.log
+    echo "{\"hq\": "${HQ_COUNTS}"}" >> /var/log/traffic/hq.log
 
     # 预警
     if [ "$API_COUNTS" -ge "$api" ];then
