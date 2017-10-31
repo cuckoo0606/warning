@@ -34,7 +34,7 @@ if [ "$men" == 0 ];then
 fi
 
 if [ "$disk" -eq 0 ];then
-    wx=${DISK}
+    disk=${DISK}
 fi
 
 
@@ -60,6 +60,8 @@ echo "$1 disk=${DISK_USE}" >> /var/log/traffic/info.log
 echo "{\"mem\": "${MEN_USE}"}" >> /var/log/traffic/mem.log
 # CPU使用率
 echo "{\"cpu\": "${CPU_USE}"}" >> /var/log/traffic/cpu.log
+# 磁盘使用率
+echo "{\"disk\": "${DISK_USE}"}" >> /var/log/traffic/disk.log
 
 # 预警
 judge_cpu=$(echo "$CPU_USE > $cpu"|bc)
