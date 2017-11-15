@@ -55,6 +55,7 @@ if [[ "${TYPE[@]}" =~ 1 ]];then
     # 发送MongoDb状态日志
     MongoStatus=`ps -ef |grep mongo|grep -v grep|awk '{print $1}' |wc -L`
     if [ $MongoStatus -eq 0  ];then
+        `sudo mongod -f /etc/mongod.conf --fork`
         `curl -d "name=${NAME}&subname=${SUBNAME}&arg=error" $url`
     fi
 fi
